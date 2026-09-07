@@ -9,7 +9,7 @@ The Mini Hospital Emergency Management System is a Java-based application design
 - Binary Search Tree (BST) – Patient registration, searching, deletion, and display
 - Queue – Emergency patient management using FIFO
 - Stack – Completed treatment history using LIFO
-- Singly Linked List – Previous patient visit management
+- Singly Linked List – Each patient's previous visit history
 
 ## Main Features
 
@@ -88,4 +88,4 @@ The system was tested for:
 
 ## Author
 
-Fathima Sadha
+M.I.F. Sadha
