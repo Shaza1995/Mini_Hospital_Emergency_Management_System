@@ -68,3 +68,24 @@ Mini_Hospital_Emergency_Management_System
 
 ![Main Menu](system-main-menu.png)
 
+
+## Testing
+
+The system was tested for:
+
+- Patient registration
+- Patient searching
+- Patient deletion
+- BST ordered display
+- Emergency queue FIFO operation
+- Treatment stack LIFO operation
+- Visit addition
+- Visit searching
+- Visit removal
+- Visit history display
+- Empty queue and stack handling
+
+
+## Author
+
+Fathima Sadha
