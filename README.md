@@ -60,4 +60,11 @@ Mini_Hospital_Emergency_Management_System
 │       ├── Visit.java
 │       ├── VisitLinkedList.java
 │       └── HospitalManagementSystem.java
-└── out
+└── out 
+
+```
+
+## System Screenshot
+
+![Main Menu](system-main-menu.png)
+
