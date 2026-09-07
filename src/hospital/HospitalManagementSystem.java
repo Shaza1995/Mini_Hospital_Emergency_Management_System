@@ -9,7 +9,6 @@ public class HospitalManagementSystem {
     static PatientBST patientBST = new PatientBST();
     static EmergencyQueue emergencyQueue = new EmergencyQueue();
     static TreatmentStack treatmentStack = new TreatmentStack();
-    static VisitLinkedList visitHistory = new VisitLinkedList();
 
     public static void main(String[] args) {
 
@@ -306,25 +305,52 @@ public class HospitalManagementSystem {
                 treatment
         );
 
-        visitHistory.addVisit(visit);
+        patient.getVisitHistory().addVisit(visit);
+
+        System.out.println("Visit added to patient's history.");
+    }
+
+    public static Patient findPatientForVisit() {
+
+        int patientId = getIntInput("Enter Patient ID: ");
+
+        Patient patient = patientBST.search(patientId);
+
+        if (patient == null) {
+            System.out.println("Patient not found.");
+        }
+
+        return patient;
     }
 
     public static void removeVisit() {
 
         System.out.println("\n--- Remove Patient Visit ---");
 
+        Patient patient = findPatientForVisit();
+
+        if (patient == null) {
+            return;
+        }
+
         int visitId = getIntInput("Enter Visit ID: ");
 
-        visitHistory.removeVisit(visitId);
+        patient.getVisitHistory().removeVisit(visitId);
     }
 
     public static void searchVisit() {
 
         System.out.println("\n--- Search Patient Visit ---");
 
+        Patient patient = findPatientForVisit();
+
+        if (patient == null) {
+            return;
+        }
+
         int visitId = getIntInput("Enter Visit ID: ");
 
-        Visit visit = visitHistory.searchVisit(visitId);
+        Visit visit = patient.getVisitHistory().searchVisit(visitId);
 
         if (visit == null) {
             System.out.println("Visit not found.");
@@ -339,7 +365,13 @@ public class HospitalManagementSystem {
 
         System.out.println("\n--- Patient Visit History ---");
 
-        visitHistory.displayVisits();
+        Patient patient = findPatientForVisit();
+
+        if (patient == null) {
+            return;
+        }
+
+        patient.getVisitHistory().displayVisits();
     }
 
     public static int getIntInput(String message) {
